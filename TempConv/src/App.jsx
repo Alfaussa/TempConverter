@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 
 function App() {
+  const[color, setColor] = useState('green')
 
+  useEffect(()=>{
+    document.body.style.backgroundColor = color;
+  }, [color])
   const [userInput, setUserInput] = useState({c:'', f:''})
 
   const handleClick1 = (event) => {
@@ -21,11 +25,15 @@ function App() {
   })
   }
   
+  function changeColor(){
+    setColor('orange');
+  }
   return (<>
 <p>Градус Цельсия</p>
 <input type='number' value={userInput.c} onChange={handleClick1}></input>
 <p>Градус Фаренгейта</p>
 <input type='number' value={userInput.f} onChange={handleClick2}></input>
+<button onClick={changeColor}></button>
     </>
   )
 }
