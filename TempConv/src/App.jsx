@@ -3,37 +3,38 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const[color, setColor] = useState('green')
+  const[name, setName] = useState('')
+  const [color, setColor] = useState('orange')
+    useEffect(()=>{
+    document.body.style.color = color;
+    window.addEventListener('keydown', handleEnter);
 
-  useEffect(()=>{
-    document.body.style.backgroundColor = color;
+    return(() => {
+      window.removeEventListener('keydown', handleEnter);
+    }
+    )
+
   }, [color])
-  const [userInput, setUserInput] = useState({c:'', f:''})
+  useEffect(()=>{
+    localStorage.setItem('name', name)
+  }, [name])
 
-  const handleClick1 = (event) => {
-  setUserInput({
-    c: event.target.value,
-    f: (+event.target.value)*9/5 +32
-  })
 
-  }
-  const handleClick2 = (event) => {
-    setUserInput('')
-  setUserInput({
-    c: ((+event.target.value)-32)*5/9,
-    f: event.target.value
-  })
-  }
+  
   
   function changeColor(){
-    setColor('orange');
+    setColor('red');
+  }
+
+  function handleEnter(event){
+    if(event.keyCode === 13){
+      setColor('red')
+    }
   }
   return (<>
-<p>Градус Цельсия</p>
-<input type='number' value={userInput.c} onChange={handleClick1}></input>
-<p>Градус Фаренгейта</p>
-<input type='number' value={userInput.f} onChange={handleClick2}></input>
+
 <button onClick={changeColor}></button>
+<input onChange={(e)=>setName(e.target.value)}></input>
     </>
   )
 }
