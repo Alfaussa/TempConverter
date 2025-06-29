@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-
+import { MyContext } from './MyContext';
+import BigBox from './BigBox';
+import './styles.css';
 import './App.css'
 
 
@@ -69,6 +71,10 @@ useEffect(() => {
 {/* <input onChange={(e)=>setName(e.target.value)}></input> */}
 <a href='#' onClick={handleBlock}>sylka</a>
 {block}
+<MyContext.Provider value="small 
+			box :)"> 
+			<BigBox />
+		</MyContext.Provider>
     </>
   )
 }
