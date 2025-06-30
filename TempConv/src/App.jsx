@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-// import { MyContext } from './MyContext';
+import { MyContext } from './MyContext';
+import Parent from './Parent';
 //import BigBox from './BigBox';
 import './styles.css';
 import './App.css'
@@ -79,6 +80,9 @@ if(targetElement.id !== 'link'){
 			box :)"> 
 			<BigBox />
 		</MyContext.Provider> */}
+    <MyContext.Provider value = '42'>
+      <Parent/>
+    </MyContext.Provider>
     </>
   )
 }
