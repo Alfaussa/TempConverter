@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MyContext } from './MyContext';
 import Parent from './Parent';
-//import BigBox from './BigBox';
+import BigBox from './BigBox';
 import './styles.css';
 import './App.css'
 
@@ -10,7 +10,7 @@ function App() {
   // const[name, setName] = useState('')
   // const [color, setColor] = useState('grey')
   const[isVisible, setIsVisibility] = useState(false);
-  
+  const [name, setName] = useState('small box')
   // useEffect(()=>{
   //   document.body.style.backgroundColor = color;
   //   window.addEventListener('keydown', handleEnter);
@@ -76,13 +76,13 @@ if(targetElement.id !== 'link'){
 {/* <input onChange={(e)=>setName(e.target.value)}></input> */}
 <a id='link' href='#' onClick={handleBlock}>sylka</a>
 {block}
-{/* <MyContext.Provider value="small 
-			box :)"> 
+<MyContext.Provider value={name}> 
 			<BigBox />
-		</MyContext.Provider> */}
-    <MyContext.Provider value = '42'>
+      <button onClick={()=>{setName('metal box')}}>click</button>
+		</MyContext.Provider> 
+    {/* <MyContext.Provider value = '42'>
       <Parent/>
-    </MyContext.Provider>
+    </MyContext.Provider> */}
     </>
   )
 }
