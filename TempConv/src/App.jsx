@@ -10,7 +10,8 @@ function App() {
   // const[name, setName] = useState('')
   // const [color, setColor] = useState('grey')
   const[isVisible, setIsVisibility] = useState(false);
-  const [name, setName] = useState('small box')
+  const [name, setName] = useState('small box');
+  const[age, setAge] = useState('50');
   // useEffect(()=>{
   //   document.body.style.backgroundColor = color;
   //   window.addEventListener('keydown', handleEnter);
@@ -70,6 +71,11 @@ if(targetElement.id !== 'link'){
 
     setIsVisibility(false);}
   }
+
+  const handleAge = () => {
+    const newAge = +age/2;
+    setAge(newAge)
+  }
   return (<>
 {/* <div id='myDivId'style={{width:'200px', height:'200px'}}></div>
 <button onClick={changeColor}></button> */}
@@ -80,9 +86,10 @@ if(targetElement.id !== 'link'){
 			<BigBox />
       <button onClick={()=>{setName('metal box')}}>click</button>
 		</MyContext.Provider> 
-    {/* <MyContext.Provider value = '42'>
+    <MyContext.Provider value = {age}>
       <Parent/>
-    </MyContext.Provider> */}
+      <button onClick ={handleAge}>click age</button>
+    </MyContext.Provider> 
     </>
   )
 }
