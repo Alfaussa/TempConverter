@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { MyContext } from './MyContext';
-import BigBox from './BigBox';
+// import { MyContext } from './MyContext';
+//import BigBox from './BigBox';
 import './styles.css';
 import './App.css'
 
@@ -58,12 +58,13 @@ useEffect(() => {
 
  function handleBlock(event){
     event.preventDefault();
+    event.stopPropagation()
     setIsVisibility(!isVisible);
   }
   function closeBlock(event){
-     if(isVisible){
+
     event.preventDefault();
-    setIsVisibility(false);}
+    setIsVisibility(false);
   }
   return (<>
 {/* <div id='myDivId'style={{width:'200px', height:'200px'}}></div>
@@ -71,10 +72,10 @@ useEffect(() => {
 {/* <input onChange={(e)=>setName(e.target.value)}></input> */}
 <a href='#' onClick={handleBlock}>sylka</a>
 {block}
-<MyContext.Provider value="small 
+{/* <MyContext.Provider value="small 
 			box :)"> 
 			<BigBox />
-		</MyContext.Provider>
+		</MyContext.Provider> */}
     </>
   )
 }
