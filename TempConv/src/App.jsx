@@ -41,6 +41,8 @@ if(isVisible){
 useEffect(() => {
 {
  document.addEventListener('click', closeBlock);
+
+
  return() => {
  document.removeEventListener('click', closeBlock);
  }}}
@@ -58,19 +60,20 @@ useEffect(() => {
 
  function handleBlock(event){
     event.preventDefault();
-    event.stopPropagation()
     setIsVisibility(!isVisible);
   }
   function closeBlock(event){
-    
+      event.preventDefault();
+      const targetElement = event.target;
+if(targetElement.id !== 'link'){
 
-    setIsVisibility(!isVisible);
+    setIsVisibility(false);}
   }
   return (<>
 {/* <div id='myDivId'style={{width:'200px', height:'200px'}}></div>
 <button onClick={changeColor}></button> */}
 {/* <input onChange={(e)=>setName(e.target.value)}></input> */}
-<a href='#' onClick={handleBlock}>sylka</a>
+<a id='link' href='#' onClick={handleBlock}>sylka</a>
 {block}
 {/* <MyContext.Provider value="small 
 			box :)"> 
