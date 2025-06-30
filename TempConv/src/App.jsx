@@ -62,9 +62,9 @@ useEffect(() => {
     setIsVisibility(!isVisible);
   }
   function closeBlock(event){
+    
 
-    event.preventDefault();
-    setIsVisibility(false);
+    setIsVisibility(!isVisible);
   }
   return (<>
 {/* <div id='myDivId'style={{width:'200px', height:'200px'}}></div>
