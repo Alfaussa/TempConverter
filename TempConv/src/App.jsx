@@ -7,20 +7,19 @@ import './App.css'
 
 
 function App() {
-  const[state, setState] = useState(0)
+  const[state, setState] = useState('')
   const ref = useRef(0);
 
 function handleClick(){
-  ref.current = ref.current + 1;
-  console.log('ref click: ' +ref.current);
+ setState(state + '!')
 }
 
   return (<>
-<button onClick={handleClick}>
+<button >
   state click: {ref.current}
 </button>
-<p>text</p>
-<button>click</button>
+<p>text{state}</p>
+<button onClick={handleClick}>click</button>
     </>
   )
 }
