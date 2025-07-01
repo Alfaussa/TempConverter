@@ -11,16 +11,15 @@ function App() {
   const ref = useRef('');
 
 function handleClick(){
- ref.current = ref.current + '!'
- console.log(ref.current)
+ref.current.focus()
+ref.current.value = '';
 }
 
   return (<>
-<button >
-  state click: {ref.current}
-</button>
-<p>text{ref.current}</p>
-<button onClick={handleClick}>click</button>
+	<div>
+		<input value={state} onChange={(e)=>setState(e.target.value)} ref={ref}/>
+		<button onClick={handleClick}>focus</button>
+	</div>
     </>
   )
 }
