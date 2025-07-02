@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
 import { MyContext } from './MyContext';
 import Parent from './Parent';
 import BigBox from './BigBox';
@@ -7,18 +7,29 @@ import './App.css'
 
 
 function App() {
-  const[state, setState] = useState('')
+  const[isGreen, setIsGreen] = useState(false);
+  const[num, setNum]= useState(0);
   const ref = useRef('');
 
 function handleClick(){
 ref.current.focus()
 ref.current.value = '';
 }
-
+const result = useMemo(()=>square(num), [num])
+function square(num) {
+	let startTime = performance.now();
+	
+	while (performance.now() - startTime 
+		< 500) { 
+		// Just do nothing ...
+	}
+	
+	return num * num;
+}
   return (<>
 	<div>
-		<input value={state} onChange={(e)=>setState(e.target.value)} ref={ref}/>
-		<button onClick={handleClick}>focus</button>
+		<h3 onClick={()=>setIsGreen(!isGreen)}style={{color:isGreen ? 'green':'orangered'}}>Text</h3>
+		<button onClick={()=>setNum(num + 1)}>click:{result}</button>
 	</div>
     </>
   )
