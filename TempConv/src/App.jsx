@@ -5,19 +5,26 @@ import BigBox from './BigBox';
 import './styles.css';
 import './App.css'
 
+import Child from './Child';
+
 
 function App() {
-  const[text, setText] = useState('react');
-  const[num, setNum] = useState(0);
+const [name, setName] = useState('');
+const [surn, setSurn] = useState('');
 
-  function triple(num){
-    return num**3;
-  }
-  const result = useMemo(()=>triple(num), [num]) ;
+  
   return (<>
 	<div>
-	<p onClick={()=>setText(text + "!")}>{text}</p>
-  <p onClick={()=>setNum(num + 1)}>{result}</p>
+		<label>
+			name:
+			<input value={name} onChange={(e) => setName(e.target.value)} /> 
+		</label>
+		<br />
+		<label>
+			surname:
+			<input value={surn} onChange={(e) => setSurn(e.target.value)} /> 
+		</label>
+    <Child name={name} />
 	</div>
     </>
   )
