@@ -7,29 +7,17 @@ import './App.css'
 
 
 function App() {
-  const[isGreen, setIsGreen] = useState(false);
-  const[num, setNum]= useState(0);
-  const ref = useRef('');
+  const[text, setText] = useState('react');
+  const[num, setNum] = useState(0);
 
-function handleClick(){
-ref.current.focus()
-ref.current.value = '';
-}
-const result = useMemo(()=>square(num), [num])
-function square(num) {
-	let startTime = performance.now();
-	
-	while (performance.now() - startTime 
-		< 500) { 
-		// Just do nothing ...
-	}
-	
-	return num * num;
-}
+  function triple(num){
+    return num**3;
+  }
+  const result = useMemo(()=>triple(num), [num]) ;
   return (<>
 	<div>
-		<h3 onClick={()=>setIsGreen(!isGreen)}style={{color:isGreen ? 'green':'orangered'}}>Text</h3>
-		<button onClick={()=>setNum(num + 1)}>click:{result}</button>
+	<p onClick={()=>setText(text + "!")}>{text}</p>
+  <p onClick={()=>setNum(num + 1)}>{result}</p>
 	</div>
     </>
   )
