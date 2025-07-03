@@ -4,7 +4,7 @@ import Parent from './Parent';
 import BigBox from './BigBox';
 import './styles.css';
 import './App.css'
-
+import { Text } from './Text';
 import Child from './Child';
 
 
@@ -20,10 +20,7 @@ const [surn, setSurn] = useState('');
 			<input value={name} onChange={(e) => setName(e.target.value)} /> 
 		</label>
 		<br />
-		<label>
-			surname:
-			<input value={surn} onChange={(e) => setSurn(e.target.value)} /> 
-		</label>
+	<Text/>
     <Child name={name} />
 	</div>
     </>
