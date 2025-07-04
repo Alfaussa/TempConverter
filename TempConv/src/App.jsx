@@ -51,7 +51,7 @@ const addProducts = useCallback(()=>{
   addItem={addItem}
   />
 
-  <p onClick={()=>setText(text + '')}>{text}</p>
+  <p onClick={()=>setText(text + '!')}>{text}</p>
   <Products
   addProduct={addProducts}
   products={products}/>

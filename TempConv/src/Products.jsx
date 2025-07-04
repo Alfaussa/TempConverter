@@ -14,4 +14,4 @@ function Products ({addProduct, products}) {
   </>)
 }
 
-export default memo(Products)
+export default Products
