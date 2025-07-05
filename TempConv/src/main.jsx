@@ -8,12 +8,13 @@ import {
   createRoutesFromElements,
   Route
 } from 'react-router-dom';
+import Root from './routes/root';
 
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <div>I'm number one in React!</div>, 
+		element: <Root/>, 
 	},
 ]);
 
