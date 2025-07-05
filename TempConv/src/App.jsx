@@ -3,7 +3,7 @@ import { MyContext } from './MyContext';
 import Parent from './Parent';
 import BigBox from './BigBox';
 import './styles.css';
-import './App.css'
+
 import { Text } from './Text';
 import Child from './Child';
 import Items from './Items';
