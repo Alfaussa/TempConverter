@@ -9,15 +9,14 @@ import {
   Route
 } from 'react-router-dom';
 import Root from './routes/Root.jsx';
-import ErrorPage404 
-	from './error-page-404'; 
+import ErrorPage404 from './error-page-404'; 
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Root/>, 
-    errorElement: <ErrorPage404 
-			/>
+    errorElement: <ErrorPage404/>
+			
 	},
 ]);
 

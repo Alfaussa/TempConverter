@@ -1,10 +1,8 @@
 function Root() {
 	return (
 		<nav>
-			<a href={`/products/1`}>Pr
-				oduct1</a>
-	 		<a href={`/products/2`}>Prod
-				uct2</a>
+			<a href={`/students/1`}>student1</a>
+	 		<a href={`/students/2`}>student2</a>
 		</nav>
 	);
 }
