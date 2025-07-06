@@ -8,16 +8,21 @@ import {
   createRoutesFromElements,
   Route
 } from 'react-router-dom';
-import Root from './routes/Root.jsx';
+import Root from './routes/root.jsx';
 import ErrorPage404 from './error-page-404'; 
+import Product from './routes/product.jsx';
+import Student from './routes/student.jsx';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Root/>, 
     errorElement: <ErrorPage404/>
-			
 	},
+  {
+    path: 'students/:studentId',
+    element: <Student/>
+  }
 ]);
 
 // const router = createBrowserRouter(
