@@ -1,5 +1,5 @@
 
-import { Outlet, Link, useLoaderData } from 'react-router-dom'; 
+import { Outlet, Link, useLoaderData, Form } from 'react-router-dom'; 
 
 import { getStudents } from '../forStorage' 
 
@@ -18,6 +18,9 @@ function Root() {
 return (
 	<div id="main">
 		<div id="menu">
+			<Form method="post">
+				<button type="submit">add product</button>
+			</Form>
 		{students.length ? (
 			<nav>
 				{students.map((student)=>
