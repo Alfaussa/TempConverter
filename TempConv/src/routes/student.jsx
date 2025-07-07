@@ -3,7 +3,7 @@
 
 function Student() {
 
-const product = {
+const student = {
 		name: 'Ivan',
 		surname: 'Ivanov',
 		year: 2005,
@@ -13,10 +13,10 @@ const product = {
     return (
 	<div>
 		<h2>Student page</h2>
-		<p>Name: {product.name}</p>
-		<p>Surname: {product.surname}</p>
-		<p>Year: {product.year}</p>
-		<p>Profession: {product.profession}</p>
+		<p>Name: {student.name}</p>
+		<p>Surname: {student.surname}</p>
+		<p>Year: {student.year}</p>
+		<p>Profession: {student.profession}</p>
 	</div>
 
 )};
