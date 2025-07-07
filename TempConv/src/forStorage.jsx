@@ -1,4 +1,5 @@
 import localforage from 'localforage'; 
+import { nanoid } from 'nanoid';
 
 export async function 
 	getStudents() { 
@@ -8,6 +9,21 @@ export async function
 	if (!students) students = [];
 	return students;
 };
+
+export async function createProduct() 
+	{
+        await someNetwork();
+        let id = nanoid(6);
+        let product = { id };
+	let products = await getProducts();
+	products.unshift(product);
+	await setProducts(products);
+	return product;
+}
+    function setProducts(products) {
+	return localforage.setItem('products', products);
+}
+
 
 
 let someCache = {};
