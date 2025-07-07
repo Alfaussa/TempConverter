@@ -12,7 +12,7 @@ import Root from './routes/root.jsx';
 import ErrorPage404 from './error-page-404'; 
 import Product from './routes/product.jsx';
 import Student from './routes/student.jsx';
-import { Outlet } from  'react-router-dom'; 
+
 
 
 const router = createBrowserRouter([
