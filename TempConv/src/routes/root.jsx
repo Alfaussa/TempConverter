@@ -1,11 +1,11 @@
-import { Outlet } from 
-	'react-router-dom'; 
+
+import { Outlet, Link } from 'react-router-dom'; 
 function Root() {
 return (
 	<div id="main">
 		<nav>
-			<a href={`/students/1`}>student1</a>
-	 		<a href={`/sudents/2`}>student2</a>
+			<Link to={`/students/1`}>student1</Link>
+	 		<Link to={`/sudents/2`}>student2</Link>
 		</nav>
 		<div id="product">
 			<Outlet />
