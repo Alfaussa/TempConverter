@@ -1,10 +1,17 @@
+import { Outlet } from 
+	'react-router-dom'; 
 function Root() {
-	return (
+return (
+	<div id="main">
 		<nav>
-			<a href={`/students/1`}>student1</a>
-	 		<a href={`/students/2`}>student2</a>
+			<a href={`/products/1`}>Product1</a>
+	 		<a href={`/products/2`}>Product2</a>
 		</nav>
-	);
+		<div id="product">
+			<Outlet />
+		</div>
+	</div>
+)
 }
 
 export default Root;
