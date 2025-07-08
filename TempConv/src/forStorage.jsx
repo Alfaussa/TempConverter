@@ -10,18 +10,18 @@ export async function
 	return students;
 };
 
-export async function createProduct() 
+export async function createStudents() 
 	{
         await someNetwork();
         let id = nanoid(6);
-        let product = { id };
-	let products = await getProducts();
-	products.unshift(product);
-	await setProducts(products);
-	return product;
+        let student = { id };
+	let students = await getStudents();
+	students.unshift(student);
+	await setStudents(students);
+	return student;
 }
-    function setProducts(products) {
-	return localforage.setItem('products', products);
+    function setStudents(students) {
+	return localforage.setItem('students', students);
 }
 
 

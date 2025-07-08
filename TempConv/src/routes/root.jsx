@@ -1,7 +1,7 @@
 
 import { Outlet, Link, useLoaderData, Form } from 'react-router-dom'; 
 
-import { getStudents } from '../forStorage' 
+import { getStudents, createStudents } from '../forStorage' 
 
 export async function loader() {
 	const students = await 
@@ -9,7 +9,10 @@ export async function loader() {
 	return { students };
 }
 
-
+export async function action() {
+	const student = await createStudents();
+	return { student };
+}
 
 function Root() {
 
