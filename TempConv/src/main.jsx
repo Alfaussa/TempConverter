@@ -14,7 +14,7 @@ import Product from './routes/product.jsx';
 import Student from './routes/student.jsx';
 import { loader as rootLoader, action as rootAction} from './routes/root.jsx'; 
 import {loader as studentLoader} from './routes/student.jsx';
-
+import EditStudent, {loader as editStudentLoader} from './routes/edit.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +29,11 @@ const router = createBrowserRouter([
     element: <Student/>,
     loader: studentLoader,
       },
+      {
+		path: 'students/:studentId/edit',
+		element: <EditStudent />,
+		loader: editStudentLoader,
+	},
   ]
 }
 ]);
