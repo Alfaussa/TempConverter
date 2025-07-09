@@ -1,10 +1,19 @@
 import { Form, useLoaderData } from 'react-router-dom';
 import { getStudent } from '../forStorage';
+import { updateStudent } from '../forStorage';
 
 export async function loader({ params 
 	}) { 
 	const student = await getStudent(params.studentId);
 
+	return { student };
+}
+
+export async function action({ request, 
+	params }) { 
+	const formData = await request.formData();
+	const updates = Object.fromEntries(formData);
+	await updateStudent(params.studentId, updates);
 	return { student };
 }
 
