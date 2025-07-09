@@ -44,3 +44,10 @@ async function someNetwork(key) {
 			* 700); 
 	});
 }
+
+export async function getStudent(id) {
+	await fakeNetwork(`student:${id}`);
+	let students = await localforage.getItem('students');
+	let student = students.find((student) => student.id === id);
+	return student ?? null;
+}
