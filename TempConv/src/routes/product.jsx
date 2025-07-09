@@ -2,6 +2,7 @@
 
 
 import { useLoaderData } from 'react-router-dom';
+import { Form } from 'react-router-dom';
 
 export async function loader({ params 
 	}) { 
@@ -21,7 +22,12 @@ const {product} = useLoaderData();
 	: <i>unknown</i>}</p> 
 <p>Amount: {product.amount ? product.amount 
 	: <i>unknown</i>}</p> 
+
+	<Form action="edit">
+	<button type="submit">edit</button>
+	</Form>
 	</div>
+	
 
 )};
 export default Product;
