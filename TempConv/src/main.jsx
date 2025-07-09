@@ -12,7 +12,8 @@ import Root from './routes/root.jsx';
 import ErrorPage404 from './error-page-404'; 
 import Product from './routes/product.jsx';
 import Student from './routes/student.jsx';
-import { loader as rootLoader, action as rootAction } from './routes/root.jsx'; 
+import { loader as rootLoader, action as rootAction} from './routes/root.jsx'; 
+import {loader as studentLoader} from './routes/student.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
   children: [
       {
     path: 'students/:studentId',
-    element: <Student/>
+    element: <Student/>,
+    loader: studentLoader,
       },
   ]
 }
