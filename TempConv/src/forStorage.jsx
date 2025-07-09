@@ -51,3 +51,15 @@ export async function getStudent(id) {
 	let student = students.find((student) => student.id === id);
 	return student ?? null;
 }
+
+export async function updateStudent(id, 
+	updates) { 
+	await someNetwork();
+	let students = await localforage.getItem('students');
+	let student = students.find((student) => student.id 
+		=== id); 
+	if (!student) throw new Error('No student found for this', id);				 
+    Object.assign(student, updates);
+	await setStudents(students);
+	return student;
+}
