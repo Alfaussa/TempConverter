@@ -1,8 +1,8 @@
 
-import { Outlet, Link, useLoaderData, Form } from 'react-router-dom'; 
+import { Outlet, useLoaderData, Form } from 'react-router-dom'; 
 
 import { getStudents, createStudents } from '../forStorage' 
-import {redirect} from 'react-router-dom';
+import {redirect, NavLink} from 'react-router-dom';
 
 export async function loader() {
 	const students = await 
@@ -29,9 +29,13 @@ return (
 			<nav>
 				{students.map((student)=>
 				(
-					<Link key ={student.id} to={`students/${student.id}`}>
+					<NavLink key ={student.id} to={`students/${student.id}`}
+					className={({ isActive, isPending }) =>
+		  isActive ? 'active' : isPending ? 'loading' : ''
+
+				}>
 						{student.name ? student.name : <i>Unnamed</i>}
-						</Link>
+						</NavLink>
 				))}
 			</nav>):(
 				<p><i>no products here 

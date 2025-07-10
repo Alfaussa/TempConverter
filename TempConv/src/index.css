@@ -24,3 +24,11 @@ div#main {
 div#product {
 	margin-left: 40px;
 }
+a.active {
+	font-weight: bold;
+	color: brown;
+}
+
+a.loading {
+	color: gray;
+}
