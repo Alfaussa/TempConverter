@@ -2,6 +2,7 @@
 import { Outlet, Link, useLoaderData, Form } from 'react-router-dom'; 
 
 import { getStudents, createStudents } from '../forStorage' 
+import {redirect} from 'react-router-dom';
 
 export async function loader() {
 	const students = await 
@@ -11,7 +12,7 @@ export async function loader() {
 
 export async function action() {
 	const student = await createStudents();
-	return { student };
+	return redirect(`/students/${student.id}/edit`);
 }
 
 function Root() {
