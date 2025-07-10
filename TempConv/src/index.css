@@ -32,3 +32,6 @@ a.active {
 a.loading {
 	color: gray;
 }
+div.loading {
+	opacity: 0.3;
+}

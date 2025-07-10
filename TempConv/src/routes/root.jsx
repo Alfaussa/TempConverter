@@ -3,6 +3,7 @@ import { Outlet, useLoaderData, Form } from 'react-router-dom';
 
 import { getStudents, createStudents } from '../forStorage' 
 import {redirect, NavLink} from 'react-router-dom';
+import {useNavigation} from 'react-router-dom';
 
 export async function loader() {
 	const students = await 
@@ -19,6 +20,10 @@ function Root() {
 
 	const { students } 
 		= useLoaderData();
+
+
+const navigation = useNavigation();
+
 return (
 	<div id="main">
 		<div id="menu">
@@ -42,7 +47,8 @@ return (
 					...</i></p>
 			)}
 		
-		<div id="student">
+		<div id="student" className={navigation.state === 'loading' 
+	? 'loading' : ''}>
 			<Outlet />
 		</div>
 		</div>
