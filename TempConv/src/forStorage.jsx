@@ -63,3 +63,15 @@ export async function updateStudent(id,
 	await setStudents(students);
 	return student;
 }
+
+export async function deleteStudent(id) {
+	let students = await localforage.getItem('students');
+	let index = students.findIndex((student) => student.id 
+		=== id); 
+	if (index > -1) {
+		students.splice(index, 1);
+		await setStudents(students);
+		return true;
+	}
+	return false;
+}
