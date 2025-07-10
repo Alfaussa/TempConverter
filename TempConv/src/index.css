@@ -35,3 +35,10 @@ a.loading {
 div.loading {
 	opacity: 0.3;
 }
+div#control {
+	display: flex;
+}
+
+button {
+	margin-right: 5px;
+}

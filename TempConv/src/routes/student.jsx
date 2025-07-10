@@ -19,9 +19,22 @@ const { student } = useLoaderData();
 		<p>Surname: {student.surname ? student.surname : <i>unnamed</i>} </p>
 		<p>Year: {student.year ? student.year : <i>unknown</i>}</p>
 		<p>Profession: {student.profession ? student.profession : <i>unknown</i>}</p>
+		<div id="control">
 		<Form action="edit">
 	<button type="submit">edit</button>
 </Form>
+<Form
+		method="post"
+		action="delete"
+		onSubmit={(event) => {
+			if (!confirm('Do you want to delete this product?')) { 
+				event.preventDefault();
+			}
+		}}
+	>
+		<button type="submit">delete</button>
+	</Form>
+	</div>
 	</div>
 
 )};

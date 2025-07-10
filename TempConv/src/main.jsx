@@ -10,12 +10,12 @@ import {
 } from 'react-router-dom';
 import Root from './routes/root.jsx';
 import ErrorPage404 from './error-page-404'; 
-import Product from './routes/product.jsx';
+
 import Student from './routes/student.jsx';
 import { loader as rootLoader, action as rootAction} from './routes/root.jsx'; 
 import {loader as studentLoader} from './routes/student.jsx';
 import EditStudent, {loader as editStudentLoader, action as editAction} from './routes/edit.jsx';
-
+import { action as deleteAction } from './routes/delete';
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -35,6 +35,10 @@ const router = createBrowserRouter([
 		loader: editStudentLoader,
     action: editAction,
 	},
+  {
+	path: 'students/:studentId/delete',
+	action: deleteAction,
+},
   ]
 }
 ]);
