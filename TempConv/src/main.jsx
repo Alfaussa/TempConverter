@@ -16,6 +16,9 @@ import { loader as rootLoader, action as rootAction} from './routes/root.jsx';
 import {loader as studentLoader} from './routes/student.jsx';
 import EditStudent, {loader as editStudentLoader, action as editAction} from './routes/edit.jsx';
 import { action as deleteAction } from './routes/delete';
+import Index from './routes/index';
+
+
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
   children: [
+			{
+				errorElement: <ErrorPage404 />,
+     		children:   [
+    { index: true, element: <Index /> },
       {
     path: 'students/:studentId',
     element: <Student/>,
@@ -39,8 +46,10 @@ const router = createBrowserRouter([
 	path: 'students/:studentId/delete',
 	action: deleteAction,
 },
-  ]
-}
+  ],
+},
+],
+},
 ]);
 
 // const router = createBrowserRouter(
